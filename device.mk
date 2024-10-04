@@ -108,6 +108,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml
 
+# Bootloader
+TARGET_BOARD_PLATFORM := pineapple
+TARGET_BOOTLOADER_BOARD_NAME := pineapple
+
 # Boot control
 PRODUCT_PACKAGES += \
     android.hardware.boot-service.qti \
@@ -214,10 +218,6 @@ PRODUCT_PACKAGES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Fastcharge
-PRODUCT_PACKAGES += \
-    vendor.lineage.fastcharge@1.0-service.xiaomi
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -347,10 +347,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
     $(LOCAL_PATH)/configs/linker.config.json
 
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
 # Media
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.2.vendor \
@@ -410,7 +406,6 @@ PRODUCT_PACKAGES += \
     ApertureOverlayPeridot \
     CarrierConfigOverlayPeridot \
     FrameworkOverlayPeridot \
-    LineageSDKOverlayPeridot \
     SecureElementOverlayPeridot \
     SettingsOverlayPeridot \
     SettingsProviderOverlayPeridotPOCO \

@@ -51,24 +51,15 @@ AUDIO_FEATURE_ENABLED_SVA_MULTI_STAGE := true
 BOARD_SUPPORTS_SOUND_TRIGGER := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
-# Bootloader
-TARGET_BOOTLOADER_BOARD_NAME := pineapple
-TARGET_NO_BOOTLOADER := true
-
 # Display
 TARGET_SCREEN_DENSITY := 480
-
-# Filesystem
-TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # Hardware
 BOARD_USES_QCOM_HARDWARE := true
 
 # HIDL
 DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
-    $(DEVICE_PATH)/configs/hidl/compatibility_matrix.device.xml \
-    hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    $(DEVICE_PATH)/configs/hidl/compatibility_matrix.device.xml
 
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest_vendor.xml
@@ -91,8 +82,8 @@ BOARD_MKBOOTIMG_INIT_ARGS += --header_version $(BOARD_INIT_BOOT_HEADER_VERSION)
 
 BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
-    swinfo.fingerprint=peridot:$(LINEAGE_VERSION) \
-    mtdoops.fingerprint=peridot:$(LINEAGE_VERSION)
+    swinfo.fingerprint=peridot:$(AOSPA_VERSION) \
+    mtdoops.fingerprint=peridot:$(AOSPA_VERSION)
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
@@ -128,12 +119,7 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(patsubst %,$(RAMDISK_MODULES_PATH)
 BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD  := $(patsubst %,$(RAMDISK_MODULES_PATH)/%,$(shell cat $(RAMDISK_MODULES_PATH)/modules.load.recovery))
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(RAMDISK_MODULES_PATH)/modules.blocklist
 
-# Lineage Health
-TARGET_HEALTH_CHARGING_CONTROL_SUPPORTS_BYPASS := false
-
 # Partitions
--include vendor/lineage/config/BoardConfigReservedSize.mk
-
 BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824
 BOARD_INIT_BOOT_IMAGE_PARTITION_SIZE := 8388608
@@ -164,12 +150,6 @@ TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_VENDOR_DLKM := vendor_dlkm
-
-# Platform
-TARGET_BOARD_PLATFORM := pineapple
-
-# Power
-TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop
