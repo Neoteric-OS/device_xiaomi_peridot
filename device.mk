@@ -351,8 +351,6 @@ PRODUCT_VENDOR_LINKER_CONFIG_FRAGMENTS += \
 PRODUCT_PACKAGES += \
     android.hardware.media.c2@1.2.vendor \
     libOmxCore \
-    libavservices_minijail \
-    libavservices_minijail_vendor \
     libcodec2_hidl@1.0.vendor \
     libcodec2_hidl@1.1.vendor \
     libcodec2_hidl@1.2.vendor \
@@ -423,13 +421,6 @@ PRODUCT_PACKAGES += \
 # Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
-# Power
-PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
-
-PRODUCT_COPY_FILES += \
-    vendor/qcom/opensource/power/config/pineapple/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
-
 # QMI
 PRODUCT_PACKAGES += \
     libcurl.vendor \
@@ -442,10 +433,9 @@ PRODUCT_PACKAGES += \
     libvndfwk_detect_jni.qti_vendor \
     vendor.qti.hardware.systemhelper@1.0.vendor
 
-# QSPA
-PRODUCT_PACKAGES += \
-    vendor.qti.qspa-service
-
+# QTI Components
+TARGET_COMMON_QTI_COMPONENTS := \
+    perf \
 # SKU
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/props/odm_CN.prop:$(TARGET_COPY_OUT_ODM)/etc/odm_CN.prop \
@@ -536,12 +526,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.ims.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.ims.xml \
     frameworks/native/data/etc/android.hardware.telephony.mbms.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.telephony.mbms.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.sip.voip.xml
-
-# Thermal
-PRODUCT_PACKAGES += \
-    android.hardware.thermal-V1-ndk.vendor \
-    android.hardware.thermal@1.0.vendor \
-    android.hardware.thermal@2.0.vendor
 
 # Touchscreen
 PRODUCT_COPY_FILES += \
