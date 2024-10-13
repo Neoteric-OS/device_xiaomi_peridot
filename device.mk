@@ -45,9 +45,7 @@ PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.common-V1-ndk.vendor \
-    android.hardware.bluetooth.audio-impl \
-    audio.bluetooth.default
+    android.hardware.audio.common-V1-ndk.vendor
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/audio_effects.xml \
@@ -56,21 +54,8 @@ PRODUCT_COPY_FILES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth.audio-V3-ndk.vendor \
-    android.hardware.bluetooth.audio-impl \
-    android.hardware.bluetooth@1.1.vendor
-
-PRODUCT_PACKAGES += \
-    vendor.qti.hardware.bluetooth.audio-V1-ndk.vendor \
-    vendor.qti.hardware.bluetooth_audio@2.1.vendor \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
-    vendor.qti.hardware.btconfigstore@2.0.vendor
-
-PRODUCT_PACKAGES += \
-    com.dsi.ant@1.0.vendor
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
-    frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml
+    
+TARGET_USE_AIDL_QTI_BT_AUDIO := true
 
 # Bootloader
 TARGET_BOARD_PLATFORM := pineapple
@@ -410,6 +395,7 @@ PRODUCT_PACKAGES += \
 TARGET_COMMON_QTI_COMPONENTS := \
     audio \
     av \
+    bt \
     perf \
     telephony
 
