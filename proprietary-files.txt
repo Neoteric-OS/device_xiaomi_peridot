@@ -1383,46 +1383,6 @@ vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/lib64/libdiagjni.so
 vendor/lib64/vendor.qti.diaghal@1.0.so
 
-# Display
-odm/lib64/libclient2slpi.notifier.so
-odm/lib64/libdisplaylog.so
-odm/lib64/librhytheyecare.so
-vendor/bin/hw/vendor.qti.hardware.display.allocator-service
-vendor/bin/hw/vendor.qti.hardware.display.composer-service
-vendor/bin/hw/vendor.qti.hardware.display.demura-service
-vendor/etc/clstc_config_library.xml
-vendor/etc/display/advanced_sf_offsets.xml
-vendor/etc/init/vendor.qti.hardware.display.allocator-service.rc
-vendor/etc/init/vendor.qti.hardware.display.composer-service.rc
-vendor/etc/init/vendor.qti.hardware.display.demura-service.rc
-vendor/etc/snapdragon_color_libs_config.xml
-vendor/etc/vintf/manifest/android.hardware.graphics.mapper-impl-qti-display.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.display.composer-service.xml
-vendor/etc/vintf/manifest/vendor.qti.hardware.display.demura-service.xml
-vendor/lib64/hw/gralloc.default.so
-vendor/lib64/libdfintf.so
-vendor/lib64/libdisplayconfig.qti.so
-vendor/lib64/libdisplaydebug.so
-vendor/lib64/libdpp_manager.so
-vendor/lib64/libfilefinder.so
-vendor/lib64/libgpu_tonemapper.so
-vendor/lib64/libgralloc.qti.so
-vendor/lib64/libgralloccore.so
-vendor/lib64/libgrallocutils.so
-vendor/lib64/libhdr_stub.so
-vendor/lib64/libhdrdynamic.so
-vendor/lib64/libhdrdynamicootf.so
-vendor/lib64/libhdrvivid.so
-vendor/lib64/libhistogram.so
-vendor/lib64/libqdutils.so
-vendor/lib64/libqservice.so
-vendor/lib64/libsdedrm.so
-vendor/lib64/libsdmcore.so
-vendor/lib64/libsdmdal.so
-vendor/lib64/libsdmutils.so
-vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so
-
 # Display Calibration
 odm/etc/display/qdcm_calib_data_xiaomi_36_0f_0b_video_mode_dsc_dsi_panel.json
 odm/etc/display/qdcm_calib_data_xiaomi_42_02_0a_video_mode_dsc_dsi_panel.json
