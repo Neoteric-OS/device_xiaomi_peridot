@@ -74,7 +74,8 @@ BOARD_BOOTCONFIG := \
     androidboot.usbcontroller=a600000.dwc3 \
     androidboot.load_modules_parallel=true \
     androidboot.vendor.qspa=true \
-    androidboot.hypervisor.protected_vm.supported=false
+    androidboot.hypervisor.protected_vm.supported=false \
+    androidboot.selinux=permissive
 
 # Kernel (prebuilt)
 PREBUILT_PATH := device/xiaomi/peridot-prebuilt
@@ -139,17 +140,22 @@ TARGET_ODM_PROP += $(DEVICE_PATH)/props/odm.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
 
 # Recovery
-$(call soong_config_set, ufsbsg, ufsframework, bsg)
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_F2FS := true
 
 # Sepolicy
-include device/qcom/sepolicy_vndr/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/private
+
+# UFS
+#namespace definition for librecovery_updater
+#differentiate legacy 'sg' or 'bsg' framework
+SOONG_CONFIG_NAMESPACES += ufsbsg
+SOONG_CONFIG_ufsbsg += ufsframework
+SOONG_CONFIG_ufsbsg_ufsframework := bsg
 
 # Vendor security patch
 VENDOR_SECURITY_PATCH := 2024-07-01
