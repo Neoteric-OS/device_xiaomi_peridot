@@ -67,7 +67,7 @@ function blob_fixup() {
         vendor/bin/init.qcom.usb.sh)
             sed -i 's/ro.product.marketname/ro.product.odm.marketname/g' "${2}"
             ;;
-        vendor/etc/seccomp_policy/atfwd@2.0.policy|vendor/etc/seccomp_policy/wfdhdcphalservice.policy)
+        vendor/etc/seccomp_policy/atfwd@2.0.policy|vendor/etc/seccomp_policy/wfdhdcphalservice.policy|vendor/etc/seccomp_policy/qsap_sensors.policy|vendor/etc/seccomp_policy/gnss@2.0-qsap-location.policy)
             [ "$2" = "" ] && return 0
             grep -q "gettid: 1" "${2}" || echo -e "\ngettid: 1" >> "${2}"
             ;;

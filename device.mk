@@ -42,7 +42,8 @@ PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio.common-V1-ndk.vendor
+    android.hardware.audio.common-V1-ndk.vendor \
+    android.hardware.audio@7.0-impl
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/sku_cliffs/audio_effects.xml \
@@ -173,7 +174,8 @@ PRODUCT_COPY_FILES += \
 TARGET_USE_AIDL_QTI_HEALTH := true
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
-    android.hardware.health-service.qti_recovery
+    android.hardware.health-service.qti_recovery \
+    android.hardware.health-V1-ndk.vendor
 
 # HIDL
 PRODUCT_PACKAGES += \
@@ -250,7 +252,8 @@ PRODUCT_PACKAGES += \
     libkeymaster_messages.vendor \
     libkeymaster_portable.vendor \
     android.se.omapi-V1-ndk.vendor \
-    libcppbor_external.vendor
+    libcppbor_external.vendor \
+    qti.video.utils.videobufferlayout.vendor
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.device_id_attestation.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.device_id_attestation.xml \
@@ -364,10 +367,13 @@ TARGET_COMMON_QTI_COMPONENTS := \
     audio \
     av \
     bt \
+    charging \
     display \
+    media \
     perf \
     telephony \
-    wfd
+    wfd \
+    wlan
 
 # SKU
 PRODUCT_COPY_FILES += \

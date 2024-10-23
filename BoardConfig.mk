@@ -41,12 +41,12 @@ TARGET_SCREEN_DENSITY := 480
 BOARD_USES_QCOM_HARDWARE := true
 
 # HIDL
-DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += \
     $(DEVICE_PATH)/configs/hidl/compatibility_matrix.device.xml
 
-DEVICE_MATRIX_FILE := $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/hidl/manifest_vendor.xml
-ODM_MANIFEST_FILES := $(DEVICE_PATH)/configs/hidl/manifest_odm.xml
+DEVICE_MATRIX_FILE += $(DEVICE_PATH)/configs/hidl/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/manifest_vendor.xml
+ODM_MANIFEST_FILES += $(DEVICE_PATH)/configs/hidl/manifest_odm.xml
 
 # Kernel
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
