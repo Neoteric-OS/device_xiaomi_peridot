@@ -9,8 +9,6 @@ ro.vendor.audio.btsamplerate.adaptive=true
 ro.vendor.audio.dualadc.support=true
 ro.vendor.audio.gain.support=true
 ro.vendor.audio.support.sound.id=true
-ro.media.xml_variant.codecs=_cliffs
-ro.media.xml_variant.codecs_performance=_cliffs
 
 # Bluetooth
 bluetooth.profile.asha.central.enabled=true
