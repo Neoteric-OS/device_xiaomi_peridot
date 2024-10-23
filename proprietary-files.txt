@@ -2733,8 +2733,6 @@ odm/firmware/haptic_rtp_osc_24K_5s.bin
 odm/firmware/haptic_rtp_silk.bin
 
 # WiFi
-vendor/bin/cnss-daemon
-vendor/bin/cnss_diag
 vendor/bin/mbnota
 vendor/etc/init/init.vendor.wlan.rc
 vendor/etc/init/libxiaomi_qcril.rc
