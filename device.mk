@@ -19,9 +19,6 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 # pKVM
 $(call inherit-product, packages/modules/Virtualization/apex/product_packages.mk)
 
-# Qualcomm
-$(call inherit-product, hardware/qcom-caf/common/common.mk)
-
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -153,52 +150,13 @@ PRODUCT_COPY_FILES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    vendor.display.config@1.0.vendor \
-    vendor.display.config@1.1.vendor \
-    vendor.display.config@1.10.vendor \
-    vendor.display.config@1.11.vendor \
-    vendor.display.config@1.2.vendor \
-    vendor.display.config@1.3.vendor \
-    vendor.display.config@1.4.vendor \
-    vendor.display.config@1.5.vendor \
-    vendor.display.config@1.6.vendor \
-    vendor.display.config@1.7.vendor \
-    vendor.display.config@1.8.vendor \
-    vendor.display.config@1.9.vendor \
-    vendor.display.config@2.0.vendor \
-    vendor.qti.hardware.display.allocator@1.0.vendor \
-    vendor.qti.hardware.display.allocator@3.0.vendor \
+    android.hardware.graphics.allocator-V1-ndk.vendor \
+    android.hardware.graphics.composer3-V2-ndk.vendor \
+    android.hardware.graphics.mapper@4.0-impl-qti-display \
+    libui.vendor \
     vendor.qti.hardware.display.allocator@4.0.vendor \
-    vendor.qti.hardware.display.color-V1-ndk.vendor \
-    vendor.qti.hardware.display.composer3-V1-ndk.vendor \
-    vendor.qti.hardware.display.composer@1.0.vendor \
-    vendor.qti.hardware.display.composer@2.0.vendor \
-    vendor.qti.hardware.display.config-V1-ndk.vendor \
-    vendor.qti.hardware.display.config-V10-ndk.vendor \
-    vendor.qti.hardware.display.config-V11-ndk.vendor \
-    vendor.qti.hardware.display.config-V2-ndk.vendor \
-    vendor.qti.hardware.display.config-V3-ndk.vendor \
-    vendor.qti.hardware.display.config-V4-ndk.vendor \
-    vendor.qti.hardware.display.config-V5-ndk.vendor \
-    vendor.qti.hardware.display.config-V6-ndk.vendor \
-    vendor.qti.hardware.display.config-V7-ndk.vendor \
-    vendor.qti.hardware.display.config-V8-ndk.vendor \
-    vendor.qti.hardware.display.config-V9-ndk.vendor \
-    vendor.qti.hardware.display.demura-V1-ndk.vendor \
-    vendor.qti.hardware.display.mapper@1.0.vendor \
-    vendor.qti.hardware.display.mapper@1.1.vendor \
-    vendor.qti.hardware.display.mapper@2.0.vendor \
-    vendor.qti.hardware.display.mapper@3.0.vendor \
-    vendor.qti.hardware.display.mapper@4.0.vendor \
-    vendor.qti.hardware.display.mapperextensions@1.0.vendor \
-    vendor.qti.hardware.display.mapperextensions@1.1.vendor \
-    vendor.qti.hardware.display.mapperextensions@1.2.vendor \
-    vendor.qti.hardware.display.mapperextensions@1.3.vendor \
+    vendor.qti.hardware.display.demura-V1-ndk \
     vendor.qti.hardware.display.postproc-V1-ndk.vendor
-
-PRODUCT_PACKAGES += \
-    init.qti.display_boot.rc \
-    init.qti.display_boot.sh
 
 # Dolby
 PRODUCT_PACKAGES += \
@@ -426,6 +384,7 @@ PRODUCT_PACKAGES += \
 # QTI Components
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
+    display \
     perf \
     telephony
 
